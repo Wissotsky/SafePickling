@@ -10,6 +10,20 @@ from dataclasses import dataclass, field
 class SafePickling():
     """
     A class to store keys and only encode/decode valid pickle objects
+
+    Attributes:
+        key: The key to use for signing and verification(set using set_key or generate_key methods)
+        trusted_keys: A list of trusted keys to verify the signature(set using add_trusted_keys method)
+        algorithm: The algorithm to use for signing and verification(can be either of the blake2 algorithms in the hashlib module, key length is automatically determined)
+        personalization: The personalization to use for signing and verification(can be any bytes, gets passed to the hashing algorithm)
+
+    Methods:
+        set_key: Set the key for use by the client, check if key is MAX_KEY_SIZE
+        generate_key: Generate a key for use by the client(Sets it automatically)
+        add_trusted_keys: Add trusted keys to the list of trusted keys
+        pickle: Pickle an object and sign it
+        unpickle: Unpickle the object bytes only if the signature is in trusted keys
+    
     """
     key: bytes = field(init=False)
     trusted_keys: list[bytes] = field(init=False, default_factory=list)

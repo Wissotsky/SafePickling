@@ -6,7 +6,7 @@ SafePickling is a python library that allows you to sign and verify python pickl
 
 `pip install safepickling`
 
-## Usage
+## Usage Example
 
 ```python
 object = ExampleObject()

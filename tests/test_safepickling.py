@@ -1,5 +1,6 @@
 from safepickling import SafePickling
 from dataclasses import dataclass
+import pytest
 
 @dataclass
 class UselessData:
@@ -23,3 +24,19 @@ def test_flow():
 
     client_data = client.unpickle(safe_data)
     assert client_data == data
+
+#Tests that make sure it fails early
+def test_nokey():
+    with pytest.raises(Exception):
+        server = SafePickling()
+        server.pickle("data")
+
+def test_notrustedkeys():
+    with pytest.raises(Exception):
+        client = SafePickling()
+        client.unpickle("data")
+
+def test_invaludkeylength():
+    with pytest.raises(Exception):
+        server = SafePickling()
+        server.set_key(b"12345")
