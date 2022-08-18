@@ -1,10 +1,12 @@
 [tool.poetry]
 name = "SafePickling"
-version = "0.1.2"
+version = "1.0.1"
 description = "SafePickling is a python library that allows you to sign and verify python pickles"
 authors = ["Wissotsky <Wissotsky@protonmail.com>"]
 readme = "README.md"
 license = "MIT"
+repository = "https://github.com/Wissotsky/SafePickling"
+keywords = ["pickle", "safe", "sign", "verify", "security"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
