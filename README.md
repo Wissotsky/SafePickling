@@ -17,8 +17,8 @@ graph LR
         known[(Known keys)]:::storage --> F --> F
         F --> eq{Is equal?}
         unpik2 --> eq:::cryptography
-        eq -->|Yes|unpik{Unpickle}:::cryptography --> Z[Object]:::object
-        eq -->|No|Invalid:::error
+        eq -->|Yes|unpik{{Unpickle}}:::cryptography --> Z[Object]:::object
+        eq -->|No|Invalid(Invalid):::error
     end
 
     classDef network fill:#FFD666;
