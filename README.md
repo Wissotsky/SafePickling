@@ -1,6 +1,7 @@
 # SafePickling
 
 SafePickling is a python library that allows you to sign and verify python pickles.
+
 ```mermaid
 graph LR
     subgraph Server
@@ -29,7 +30,9 @@ graph LR
 
 ## Installation
 
-`pip install safepickling`
+```sh
+pip install safepickling
+```
 
 ## Usage Example
 
